@@ -3,21 +3,18 @@ from django.views.generic import TemplateView
 # Create your views here.
 def func1(request):
     title = 'Главная страница'
-    return render(request, 'platform.html', )
-def func2(request):
-    title = 'Игры'
-    l1 = "Atomic Heart"
-    l2 = "Cyberpunk 2077"
-    l3 = "PayDay2"
-    l4 = "Купить"
-    but = "Вернуться обратно"
     context = {
         'title': title,
-        'l1': l1,
-        'l2': l2,
-        'l3': l3,
+    }
+    return render(request, 'platform.html', context)
+def func2(request):
+    title = 'Игры'
+    games = ["Atomic Heart", "Cyberpunk 2077",  "PayDay2"]
+    l4 = "Купить"
+    context = {
+        'title': title,
+        'games': games,
         'l4': l4,
-        'but': but,
     }
     return render(request, 'games.html', context)
 def func3(request):
