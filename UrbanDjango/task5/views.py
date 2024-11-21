@@ -19,6 +19,7 @@ def sign_up_by_html(request):
                 'repeat_password': repeat_password,
                 'age':age
             }
+
             return HttpResponse(f"Приветствуем, {username}!")
         else:
             if password != repeat_password:
