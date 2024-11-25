@@ -5,6 +5,10 @@
     <title>Document</title>
 </head>
 <body>
+     <h1></h1>
+        {% block content %}
+            <h1>{{ error }}</h1>
+        {% endblock %}
     <form method="post">
         {% csrf_token %}
         <label for="username">Введите логин</label>
@@ -21,5 +25,6 @@
 
         <button type="submit">Зарегистрироваться</button>
     </form>
+    {{ info }}
 </body>
 </html>
